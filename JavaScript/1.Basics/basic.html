@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        // alert('Welcome to JavaScript');
+        
+        function wishList(){
+            alert('Item added to wishlist');
+        }
+
+        function bagItems(){
+            alert('Item added to bag');
+        }
+
+    </script>
+    <style>
+        #btn1{
+            background-color: aquamarine;
+            font-size: large;
+            font-weight: 510;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 10px;
+        }
+        #btn2{
+            background-color: white;
+            font-size: large;
+            font-weight: 510;
+            padding: 5px 30px;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+        .button:hover{
+            background-color: yellowgreen;
+            color: green;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <button  class="button" id="btn1" onclick="bagItems()">Add to Bag</button>
+    <button  class="button" id="btn2" onclick="wishList()">❤️WISHLIST</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+</body>
+</html>
