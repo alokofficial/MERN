@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(63, 61, 59);
+
+}
+
+.container {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.514);
+    border: 2px solid rgb(168, 164, 164);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    box-shadow: 2px 2px 2px;
+    padding: 20px;
+
+}
+
+.display {
+    width: 70vw;
+    height: 8vh;
+    border: 1px solid rgb(179, 176, 176);
+    font-size: 30px;
+    color: black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    text-align: right;
+    background-color: rgb(228, 228, 216);
+}
+
+.button {
+    width: 100px;
+    margin: 8px;
+    padding: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(40, 41, 40);
+    cursor: pointer;
+}
+
+.equalsTo {
+    background-color: rgb(94, 74, 204);
+    width: 53.5%;
+    color: tomato;
+}
+
+.button:hover {
+    background-color: rgb(124, 122, 122);
+    color: white;
+}
+
+.button:active {
+    background-color: rgb(103, 199, 97);
+    color: rgb(14, 2, 2);
+
+}
