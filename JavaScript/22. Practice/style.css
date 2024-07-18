@@ -33,9 +33,10 @@ body {
     color: black;
     border-radius: 10px;
     margin: 5px;
-    padding: 5px;
+    padding-right: 15px;
     text-align: right;
     background-color: rgb(228, 228, 216);
+    overflow: auto;
 }
 
 .button {
