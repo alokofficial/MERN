@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        div{
+            width: 240px;
+            height: 120px;
+            border: 2px solid black;
+            margin:60px;
+        }
+        .first{
+            background-color: lightcoral;
+            overflow: visible;
+        }
+        .second{
+            background-color: lightgreen;
+            overflow: hidden;
+        }
+        .third{
+            background-color: lightblue;
+            overflow: scroll;
+        }
+        .fourth{
+            background-color: lightpink;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <p>This is a div with overflow:visible</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores exercitationem cum aliquam enim animi, inventore vitae odit, consequatur possimus esse non alias similique aut nobis error id voluptate delectus explicabo.</p>
+    </div>
+    <div class="second">
+        <p>This is a div with overflow:hidden</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores exercitationem cum aliquam enim animi, inventore vitae odit, consequatur possimus esse non alias similique aut nobis error id voluptate delectus explicabo.</p>
+    </div>
+    <div class="third">
+        <p>This is a div with overflow:scroll</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores exercitationem cum aliquam enim animi, inventore vitae odit, consequatur possimus esse non alias similique aut nobis error id voluptate delectus explicabo.</p>
+    </div>
+    <div class="fourth">
+        <p>This is a div with overflow:auto</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores exercitationem cum aliquam enim animi, inventore vitae odit, consequatur possimus esse non alias similique aut nobis error id voluptate delectus explicabo.</p>
+    </div>
+
+</body>
+</html>
