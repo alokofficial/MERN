@@ -26,7 +26,7 @@ console.log(name2)
 // console.log(name1+1)  
 // console.log(name2+1) 
 
-// Create Order Summary String for Our Myntra Cart.
+// Create Order Summary String for Our Myntra Cart
 
 let mrp=3895;
 let discountPercentage=45;
