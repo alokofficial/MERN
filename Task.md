@@ -4,5 +4,4 @@ DAY-25 both the practice and the rock paper scissor game have to implement funct
 
 game are missing I have to implement all things inside the game
 
-day-32 json and local storage i have to pending learning
 
