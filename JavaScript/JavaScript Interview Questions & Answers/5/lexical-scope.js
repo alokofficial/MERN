@@ -9,7 +9,7 @@ switch (x) {
     break;
 
   case 1:
-    let name; // SyntaxError for redeclaration.
+    // let name; // SyntaxError for redeclaration.
     break;
 }
 
@@ -24,3 +24,4 @@ switch (x) {
     break;
   }
 }
+

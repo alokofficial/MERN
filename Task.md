@@ -6,6 +6,9 @@ DAY-25 both the practice and the rock paper scissor game have to implement funct
 
 game are missing I have to implement all things inside the game
 
+Q-27 what is closure in javascript.( from interview series ).
+
+
 ##
 
 ## for Inverview purposes.
