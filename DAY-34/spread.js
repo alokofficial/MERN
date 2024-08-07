@@ -9,9 +9,9 @@ const obj2 = { ...obj, c: 3 };
 console.log(obj2)
 
 //function expansion
-function sum(...args){ {
-    return args.reduce((a, b) => a + b, 0);
+function sum(a,b,c){ {
+    return a+b+c;
 }
 }
-const number=[1,2,3,4,5,6,7,8,9,10];
+const number=[1,2,3];
 console.log(sum(...number))
