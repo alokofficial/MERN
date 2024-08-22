@@ -1,0 +1,25 @@
+// HOC:- function that can takes other function as argument or return functions as their result.
+
+// using Map function
+const arr = [1, 2, 3];
+const doubled = arr.map((num) => num * 2);
+console.log(doubled);
+
+//normal return a function withing a function
+function createAdder(x){
+    return function(y){
+        return x+y
+    }   
+
+}
+const addFive=createAdder(5);
+console.log(addFive(10)); //15
+
+//filter function
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const even=numbers.filter(n=>n%2===0);
+console.log(even);
+
+//reduce function
+const sum=numbers.reduce((acc,curr)=>acc+curr,0);
+console.log(sum);
