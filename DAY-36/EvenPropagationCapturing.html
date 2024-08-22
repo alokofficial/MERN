@@ -1,0 +1,62 @@
+<!-- The event start from the outermost element and captures down to the target element -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Event Propagation Capturing</title>
+   <style>
+       body{
+           width: 100vw;
+           height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           overflow:hidden;
+       }
+       #outside{
+           background-color: antiquewhite;
+           height: 100px;
+           width: 300px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           border:2px solid black;
+           
+       }
+       #inside{
+           background-color: aquamarine;
+           height: 20px;
+           width: 100px;
+           margin:10px;
+           color:black;
+           border: 2px solid black;
+           text-align: center;
+          
+       }
+   </style>
+</head>
+<body>
+   <div id="outside">
+       <div id="inside">Inner div</div>
+   </div>
+   <script>
+       const innerEl=document.querySelector('#inside')
+       const outerEl=document.querySelector('#outside')
+
+       innerEl.addEventListener('click', (e)=>{
+        //    e.stopPropagation() //this is used to stop the propagation from inner to outer
+           alert(`inner Div is clicked`)
+
+       })
+       outerEl.addEventListener('click', ()=>{
+           alert(`outer Div is clicked`)
+
+       },true // enabling capturing phase
+       )
+
+
+
+   </script>
+</body>
+</html>
