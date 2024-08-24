@@ -1,6 +1,0 @@
-function sum(param1, param2) // parameters
-{
-    return param1 + param2;
-}
-
-console.log(sum(1,2)) // arguments
