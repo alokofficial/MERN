@@ -1,5 +1,1 @@
-function greet(name) {
-    console.log(`Hello ${name??"World"}`);
-}
-
-greet();
+console.log('hello world');
