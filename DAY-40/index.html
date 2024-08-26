@@ -1,0 +1,81 @@
+ <!-- this page is used to show the current location of the user -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's GeoLocation</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #212121;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 30vh;
+            width: 40vw;
+            background-color: rgb(179, 230, 213);
+            padding:20px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        
+        .output{
+            width: 70%;
+            height: 25%;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin: 2px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #212121;
+            background-color: #ffffff96;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.356);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.377);
+            cursor: pointer;
+            
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="left">Latitude</label>
+        <div class="output" id="left">Fetching...🔃</div>
+        <label for="right">Longitude</label>
+        <div class="output" id="right">Fetching...🔃</div>
+    </div>
+
+   <script>
+    const leftEl=document.querySelector('#left')
+    const rightEl=document.querySelector('#right')
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position=>{
+            leftEl.addEventListener('click',()=>{
+                navigator.geolocation.getCurrentPosition(position=>{
+                    leftEl.innerHTML=position.coords.latitude
+                })
+
+            })
+            rightEl.addEventListener('click',()=>{
+                navigator.geolocation.getCurrentPosition(position=>{
+                    rightEl.innerHTML=position.coords.longitude
+                })
+            })
+        })
+    }
+
+   </script> 
+</body>
+</html>
