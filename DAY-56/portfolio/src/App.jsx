@@ -10,15 +10,15 @@ import Contacts from "./components/Contacts";
 function App() {
   return (
     <>
-      <div className="bg-gray-200 h-screen">
+      <div className="bg-gray-200 min-h-screen">
         <div className="bg-white max-w-3xl mx-auto ">
           <Heading />
           <About />
           <Projects />
           <Skill />
           <Education />
-          <Extracurricular />
           <Hobbies />
+          <Extracurricular />
           <Contacts />
         </div>
       </div>

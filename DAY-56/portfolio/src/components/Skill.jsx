@@ -1,5 +1,7 @@
 import { Code } from "lucide-react";
 import Pills from "./Pills";
+import Section from "./Section";
+
 const Skill = () => {
   const skillSets = [
     "JavaScript",
@@ -14,11 +16,9 @@ const Skill = () => {
   ];
   return (
     <div className="m-4">
-      <div className="flex gap-2 mb-3">
-        <Code />
-        <h1 className="text-xl font-bold">Skills</h1>
-      </div>
+      <Section icon={<Code />} sectionTitle="Skills">
       <Pills items={skillSets} />
+      </Section>
     </div>
   );
 };
