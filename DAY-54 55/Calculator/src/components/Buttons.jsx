@@ -18,7 +18,7 @@ const Buttons = () => {
     <>
       <Input value={result} />
       <div className="m-4 grid grid-cols-3 gap-2">
-        <Button value={"C"} onClick={handleOnClick} />
+        <Button style="bg-red-700" value={"C"} onClick={handleOnClick} />
         <Button value={"1"} onClick={handleOnClick} />
         <Button value={"2"} onClick={handleOnClick} />
         <Button value={"+"} onClick={handleOnClick} />
@@ -34,7 +34,7 @@ const Buttons = () => {
         <Button value={"9"} onClick={handleOnClick} />
         <Button value={"0"} onClick={handleOnClick} />
         <Button value={"."} onClick={handleOnClick} />
-        <Button style="col-span-2" value={"="} onClick={handleOnClick} />
+        <Button style="col-span-2 bg-green-700" value={"="} onClick={handleOnClick} />
       </div>
     </>
   );
