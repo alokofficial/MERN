@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Button from "./Button";
+import { TodoItemsContext } from "../store/TodoItemContext";
 
-const TodoItem = ({ id, todoText, todoDate, deleteTodoItem }) => {
+const TodoItem = ({ id, todoText, todoDate}) => {
+  const {deleteTodoItem}=useContext(TodoItemsContext)
 
   const deleteHandler = () => {
     deleteTodoItem(id);
