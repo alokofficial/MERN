@@ -1,15 +1,24 @@
-import React from 'react'
-import Button from './Button'
-import { Trash2 } from 'lucide-react';
+import React, { useContext } from "react";
+import Button from "./Button";
+import { Trash2 } from "lucide-react";
+import { TodoContext } from "../store/TodoContext";
 
-const TodoItem = () => {
+const TodoItem = ({ item }) => {
+  const { todoItem, setTodoItem } = useContext(TodoContext);
+
+  const onDeleteHandler = () => {
+    setTodoItem(todoItem.filter((todo) => todo.id !== item.id));
+  };
+
   return (
-    <div className='container w-3/4 flex gap-2 justify-between text-2xl p-2 my-2'>
-      <p>Make Project</p>
-      <p>11/10/2024</p>
-      <Button color='bg-green-500 py-4'><Trash2/></Button>
+    <div className="container flex gap-2 items-center text-2xl my-2 justify-between w-8/12 text-left px-5">
+      <p className="w-6/12">{item.todoText}</p>
+      <p>{item.todoDate}</p>
+      <Button color="bg-red-600 py-4" onClick={onDeleteHandler}>
+        <Trash2 />
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default TodoItem
+export default TodoItem;

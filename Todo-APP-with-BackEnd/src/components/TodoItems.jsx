@@ -1,20 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import TodoItem from './TodoItem'
+import { TodoContext } from '../store/TodoContext';
 
 const TodoItems = () => {
+  const {todoItem}=useContext(TodoContext)
   return (<>
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    
+  
+{todoItem.map((item) => (
+  <TodoItem key={item.id} item={item}/>
+))} 
 </>
   )
 }

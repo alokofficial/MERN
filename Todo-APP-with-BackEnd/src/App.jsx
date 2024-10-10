@@ -1,19 +1,14 @@
-import AddTodo from "./components/AddTodo"
-import AppName from "./components/AppName"
-import TodoItems from "./components/TodoItems"
-
-
+import { AddTodo, AppName, TodoItems } from "./components";
+import { TodoContextProvider } from "./store/TodoContext";
 function App() {
-
-
   return (
-   <center>
-    <AppName />
-    <AddTodo />
-    <TodoItems />
-    
-   </center>
-  )
+  <TodoContextProvider>
+      <center>
+        <AppName />
+        <AddTodo  />
+        <TodoItems />
+      </center>
+    </TodoContextProvider>
+  );
 }
-
-export default App
+export default App;
