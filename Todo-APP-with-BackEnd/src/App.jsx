@@ -1,13 +1,18 @@
-import Input from "./components/Input"
+import AddTodo from "./components/AddTodo"
+import AppName from "./components/AppName"
+import TodoItems from "./components/TodoItems"
+
 
 function App() {
 
 
   return (
-    <>
-      <h1 className="">This is text</h1>
-      <Input />
-    </>
+   <center>
+    <AppName />
+    <AddTodo />
+    <TodoItems />
+    
+   </center>
   )
 }
 
