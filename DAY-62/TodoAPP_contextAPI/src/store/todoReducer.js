@@ -6,7 +6,7 @@ const todoReducer = (currentItems, action) => {
         break;
       case "DELETE":
         newState = currentItems.filter(
-          (item) => item.id !== action.payload.todoId
+          (item) => item.id !== action.payload.id
         );
         break;
       default:

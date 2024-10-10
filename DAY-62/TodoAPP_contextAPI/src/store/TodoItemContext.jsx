@@ -11,20 +11,20 @@ export const TodoItemsProvider = ({ children }) => {
   const addTodoItem = (todoText, todoDate) => {
     todoDispatch({
       type: "ADD",
-      payload: { id: todoText, todoText, todoDate },
+      payload: { id: Date.now(), todoText, todoDate },
     });
   };
 
   const deleteTodoItem = (todoId) => {
     todoDispatch({
       type: "DELETE",
-      payload: { todoId },
+      payload: { id:todoId },
     });
   };
 
   return (
     <TodoItemsContext.Provider value={{ addTodoItem, deleteTodoItem, todoItems }}>
-      {children}
-    </TodoItemsContext.Provider>
+    {children}
+  </TodoItemsContext.Provider>
   );
 };
