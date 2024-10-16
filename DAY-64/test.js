@@ -11,5 +11,5 @@ console.log(data);
 
 fs.writeFile('output.text', data, (err) => {
     if (err) throw err;
-    console.log('Data written to file');
+    console.log('Data written to file successfully');
 });
