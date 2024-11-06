@@ -1,22 +1,30 @@
-const express = require("express");
-const app = express();
+// Core Modules
+const path = require("path"); // to join path
+
+// External Module
+const express = require("express"); // to create server
+const app = express(); // creating server
+const bodyParser = require("body-parser");
+
+// Local Module
+const rootDir = require('./util/path-util'); // to join path
+
+const hostRouter = require("./routers/hostRouter"); // routers
+const storeRouter = require("./routers/storeRouter"); // routers
 
 
-const hostRouter = require("./router/host");
-const userRouter = require("./router/user");
+app.use(express.static(path.join(rootDir, "public")));
+app.use(bodyParser.urlencoded({ extended: true })); // to get data from form
 
-app.use(express.urlencoded({ extended: true }));
+app.use(storeRouter); // routers
+app.use("/host", hostRouter); // routers
 
-app.use("/host", hostRouter);
-app.use("/user", userRouter);
-app.use(express.static(path.join(__dirname, 'public'))) // path.join(__dirname,     'public')
+app.use((req, res, next) => {
+  res.statusCode = 404;
+  res.sendFile(path.join(rootDir, "views", "404.html"));
+});
 
-app.use((req, res) => {
-    res.status(404).send(`
-        <h1>Page Not Found</h1>`);
-})
-
-const port = 3000;
-app.listen(port, () => {
-    console.log(`server is running at http://localhost:3000`);
-})
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Server running at: http://localhost:${PORT}`);
+});
