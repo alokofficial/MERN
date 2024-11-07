@@ -12,7 +12,7 @@ const rootDir = require('./util/path-util'); // to join path
 const {hostRouter} = require("./routers/hostRouter"); // routers
 const storeRouter = require("./routers/storeRouter"); // routers
 
-const errorController = require("./controllers/error");
+const errorController = require("./controllers/error"); // error controller
 
 app.set("view engine", "ejs"); // to use ejs
 app.set("views", "views"); // to use ejs
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // to get data from form
 app.use(storeRouter); // routers
 app.use("/host", hostRouter); // routers
 
-app.use(errorController.get404);
+app.use(errorController.get404);// error controller default
 
 const PORT = 3001;
 app.listen(PORT, () => {
