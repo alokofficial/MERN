@@ -15,11 +15,12 @@ exports.postAddHome = (req, res, next) => { // post request of add home
   }
 
   exports.getHomes = (req, res, next) => {// get request of home to show all the homes
-   const home = Home.fetchAll();
+   Home.fetchAll((homes) => {
+      res.render("index", { 
+          title: "Airbnb Home", 
+          
+          homes: homes,
+   });
     
-    res.render("index", { 
-        title: "Airbnb Home", 
-        currentPage: "index",
-        registeredHomes: home,
      });
   }

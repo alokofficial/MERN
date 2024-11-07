@@ -1,0 +1,24 @@
+[
+  {
+    "houseName": "utsav",
+    "price": "999",
+    "location": "Delhi",
+    "rating": "5",
+    "photoUrl": "/images/house2.png"
+  },
+  {
+    "houseName": "Mannat",
+    "price": "2999",
+    "location": "Mumbai",
+    "rating": "4.8",
+    "photoUrl": "/images/house3.png"
+  },
+  {
+    "houseName": "Grand",
+    "price": "2000",
+    "location": "Hyderabad",
+    "rating": "4.9",
+    "photoUrl": "/images/house4.png"
+  }
+  
+]
