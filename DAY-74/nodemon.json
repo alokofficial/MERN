@@ -1,0 +1,6 @@
+{
+    "watch": ["."], "_comment1": "watch current directory",
+    "ext": "js,ejs,json", "_comment2": "watch these file extensions",
+    "ignore": ["node_modules/**/*", "public/**/*","data/**/*"], "_comment3": "ignore these files",
+    "exec": "node app.js", "_comment4": "execute this command when files change" 
+}
