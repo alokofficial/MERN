@@ -42,6 +42,12 @@ exports.postFavourites = (req, res, next) => {
     res.render("store/favourites", { title: "Favourites", homes:home});
     res.redirect("/favourites");
 }
-exports.deleteFavourites = (req, res, next) => {
-    res.render("index", { title: "Airbnb Store"});
+exports.postRemoveFavourite = (req, res, next) => {
+    const homeId = req.params.homeId;
+    Favourite.deleteById(homeId, (error) => {
+        if (error) {
+            console.log("Error while deleting home", error);
+        }
+        res.redirect("/favourites");
+    });
 }

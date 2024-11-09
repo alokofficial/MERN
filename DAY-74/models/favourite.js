@@ -22,4 +22,10 @@ module.exports = class Favourite {
         callback(!err ? JSON.parse(data) : []);
     })
    }
+   static deleteById(removehomeId , callback){
+    Favourite.fetchAll(homeIds => {
+        const newHomes = homesIds.filter(homeId => homeId !== removehomeId);
+        fs.writeFile(homeFilePath, JSON.stringify(newHomes), callback);
+      });
+}
 }
