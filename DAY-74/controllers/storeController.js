@@ -1,8 +1,9 @@
 const Home = require("../models/home");// model import
+const Favourite = require("../models/favourite");
 exports.getIndex = (req, res, next) => {
     Home.fetchAll((registeredHomes) => {
         
-        res.render("index", { 
+        res.render("store/index", { 
             title: "Airbnb Store", 
             homes: registeredHomes,
          });
@@ -28,10 +29,18 @@ exports.getHomeDetails = (req, res, next) => {
     })
 }
 exports.getFavourites = (req, res, next) => {
-    res.render("index", { title: "Airbnb Store"});
+    Favourite.getFavourites((favourites) => {
+        Home.fetchAll((homes) => {
+            const favHomes = homes.filter(home => favourites.includes(home.id));
+            res.render("store/favourites", { title: "Favourites", homes: favHomes });
+        })
+    })
 }
 exports.postFavourites = (req, res, next) => {
-    res.render("index", { title: "Airbnb Store"});
+    const homeId = req.body.id;
+    const home = Favourite.addFavourite(homeId);
+    res.render("store/favourites", { title: "Favourites", homes:home});
+    res.redirect("/favourites");
 }
 exports.deleteFavourites = (req, res, next) => {
     res.render("index", { title: "Airbnb Store"});
