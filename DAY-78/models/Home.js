@@ -2,20 +2,23 @@ const { getDb } = require("../util/database");
 const { ObjectId } = require("mongodb");
 
 module.exports = class Home {
-  constructor(houseName, price, location, rating, photoUrl, description) {
+  constructor( houseName, price, location, rating, photoUrl, description,_id) {
     this.houseName = houseName;
     this.price = price;
     this.location = location;
     this.rating = rating;
     this.photoUrl = photoUrl;
     this.description = description;
+    if(_id){
+      this._id=new ObjectId(String(_id));
+    }
   }
   save() {
     const db = getDb();
-    if (this.id) {
+    if (this._id) {
       return db
         .collection("homes")
-        .updateOne({ _id: ObjectId(String(this.id)) }, { $set: this })
+        .updateOne({ _id:this._id }, { $set: this })
         .then((result) => {
           console.log(result);
         });

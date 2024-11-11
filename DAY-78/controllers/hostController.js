@@ -39,9 +39,11 @@ exports.postAddHome = (req, res, next) => {
 
 exports.postEditHome = (req, res, next) => {
   const { id, houseName, price, location, rating, photoUrl, description } = req.body;
-  const newHome = new Home(houseName, price, location, rating, photoUrl, description);
-  newHome.id = id;
-  newHome.save().then((rows) => {
+  const newHome = new Home(houseName, price, location, rating, photoUrl, description,id);
+  newHome.save().then((err) => {
+    if (err) {
+      console.log("error while editing home", err);
+    }
     res.redirect("/host/host-homes");
   });
 }
