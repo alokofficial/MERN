@@ -13,10 +13,18 @@ module.exports = class Favourite {
 
   static addToFavourites(homeId) {
     const db = getDb();
-    return db.collection('favourites').insertOne({homeId: new ObjectId(String(homeId))}).then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
+    return db.collection('favourites').findOne({homeId: new ObjectId(String(homeId))})
+    .then(favourite => {
+      if (favourite) {
+        return Promise.resolve();
+      }
+      else {
+        return db.collection('favourites').insertOne({homeId: new ObjectId(String(homeId))}).then((result) => {
+          console.log(result);
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
     });
    
   }

@@ -15,14 +15,14 @@ module.exports = class Home {
   }
   save() {
     const db = getDb();
-    if (this._id) {
+    if (this._id) { // edit case
       return db
         .collection("homes")
         .updateOne({ _id:this._id }, { $set: this })
         .then((result) => {
           console.log(result);
         });
-    } else {
+    } else { // new case
       return db
         .collection("homes")
         .insertOne(this)
