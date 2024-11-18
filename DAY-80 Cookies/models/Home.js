@@ -23,7 +23,7 @@ const homeSchema = new mongoose.Schema({
   // _id: mongoose.Schema.Types.ObjectId
 })
 
-// homeSchema.pre('findOneAndDelete', (next) => {
+// homeSchema.pre('findOneAndDelete', function(next){
 //   const homeId = this.getQuery()["_id"];
 //   Favourite.deleteOne({ homeId: new ObjectId(String(homeId)) })
 //   .then(() => {
